@@ -1,0 +1,7 @@
+- name: Install npm and npm  packages
+    command: ""{{ item }}""  chdir: "{{ destdir }}"
+    with_items:
+    - node -v
+    - ng version
+    - gulp -v
+

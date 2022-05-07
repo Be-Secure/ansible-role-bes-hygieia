@@ -1,0 +1,19 @@
+- name: Download the hygieia/UI from the GitRepo
+    git:
+    repo: 'https://github.com/hygieia/UI.git'
+    dest: "{{ destdir }}"
+
+- name: Update apt cache and make sure npm is installed
+    apt:
+    name: npm
+    update_cache: yes
+
+- name: Install packages using npm
+    shell:
+    cmd: npm install && npm install -g @angular/cli@8.0.3
+    chdir: "{{ destdir }}"
+
+- name: Install npm and npm  packages
+    command: npm install gulp --save-dev
+    args:
+    chdir: "{{ destdir }}"
