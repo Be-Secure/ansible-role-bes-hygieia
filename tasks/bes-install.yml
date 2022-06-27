@@ -1,7 +1,8 @@
 - name: Download the hygieia/UI from the GitRepo
     git:
-    repo: 'https://github.com/hygieia/UI.git'
-    dest: "{{ destdir }}"
+     repo: 'https://github.com/hygieia/UI.git'
+     dest: "{{ destdir }}"
+     clone: yes
 
 - name: Update apt cache and make sure npm is installed
     apt:
