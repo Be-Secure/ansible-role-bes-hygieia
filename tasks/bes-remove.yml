@@ -1,0 +1,5 @@
+- name: removing npm packages
+    command: ""{{ item }}
+    with_items:
+    - npm uninstall -g @angular/cli@8.0.3
+    - npm uninstall -D gulp
